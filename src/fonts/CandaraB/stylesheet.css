@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Candara';
+    src: url('./Candara-Bold.eot');
+    src: url('./Candara-Bold.eot?#iefix') format('embedded-opentype'),
+        url('./CANDARAB.TTF') format('truetype'),
+        url('./Candara-Bold.woff2') format('woff2'),
+        url('./Candara-Bold.woff') format('woff'),
+        url('./Candara-Bold.svg#Candara-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

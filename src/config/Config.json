@@ -1,0 +1,23 @@
+{
+  "urls": {
+    "appAPI": "http://localhost:3009/api",
+    "loginAPI": "http://localhost:3007/api",
+    "dashboardAPI": "http://185.217.126.61:5005/api",
+    "collegeAPI": "http://185.217.126.61:5039/api",
+    "messagesApi": "http://localhost:3010",
+    "toolsAPI": "http://185.217.126.61:86/api",
+    "assessmentsAPI": "http://185.217.126.61:83/api/v1",
+    "fileServerAPI": "http://185.217.126.61:90/api",
+    "careerAPI": "http://185.217.126.61:5040/api",
+    "minioServer": "http://localhost:3002/api/",
+    "techntrendsAPI": "http://localhost:3013/api"
+  },
+  "mathjax": {
+    "version": 3,
+    "config": {
+      "tex": {
+        "inlineMath": [["$$", "$$"]]
+      }
+    }
+  }
+}
