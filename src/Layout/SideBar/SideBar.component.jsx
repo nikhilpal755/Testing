@@ -15,24 +15,30 @@ const SideBar = () => {
   const [activeButton, setActiveButton] = useState();
   const [displayOptions, setDisplay] = useState(true);
   const [user] = useState(auth.user?.profileType);
-  console.log(auth);
+  // console.log(auth);
 
   let NavBar;
 
-  if (user === "student") {
+  if (user === "student" || user === "teacher"  ) {
     NavBar = Student_sidebar;
+    // localStorage.setItem("activeDarkSite", true)
   } else if (user === "admin") {
     NavBar = Admin_sidebar;
   }
 
-  const [navItems] = useState(NavBar());
+
+  // console.log(NavBar)
+
+  const [navItems] = useState(NavBar);
+
+  // console.log(navItems);
 
   const handleSideBar = (name) => {
     if (activeButton === name) {
       setDisplay(false);
       setActiveButton("");
     } else {
-      setActiveButton(name);
+      setActiveButton(name);  
       setDisplay(true);
     }
   };
@@ -51,7 +57,7 @@ const SideBar = () => {
     <>
       <StyledBox>
         <Stack spacing={0.6}>
-          {navItems.map((item) => {
+          {navItems?.map((item) => {
             return (
               <Stack spacing={0} key={item.name}>
                 <IconButton
@@ -73,7 +79,7 @@ const SideBar = () => {
           })}
         </Stack>
         <IconButton name="Logout" icon={Logout} onClick={handleLogout} />
-        {navItems.map((item) => {
+        {navItems?.map((item) => {
           return (
             activeButton === item.name &&
             displayOptions &&
@@ -90,7 +96,7 @@ const SideBar = () => {
           );
         })}
       </StyledBox>
-      {navItems.map((item) => {
+      {navItems?.map((item) => {
         return (
           activeButton === item.name &&
           displayOptions &&

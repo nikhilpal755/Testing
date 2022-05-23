@@ -15,7 +15,7 @@ const SidebarOptions = ({ optionFor, user, reset, name }) => {
 
   useEffect(() => {
     const get_options = () => {
-      if (user === "student") {
+      if (user === "student" || user === "teacher") {
         STUDENT_OPTIONS().forEach((item) => {
           if (item.name === name) {
             setOptions(item.options);
@@ -31,6 +31,7 @@ const SidebarOptions = ({ optionFor, user, reset, name }) => {
     };
     get_options();
   }, []);
+
 
   return (
     <StyledOptions>
@@ -87,6 +88,7 @@ const SidebarOptions = ({ optionFor, user, reset, name }) => {
                     padding: 0,
                   }}
                 >
+            
                   {option.title}
                 </Typography>
               </AccordionSummary>
@@ -98,6 +100,7 @@ const SidebarOptions = ({ optionFor, user, reset, name }) => {
               >
                 <Stack spacing={0.5}>
                   {option.options?.map((suboption) => {
+                    // console.log(suboption)
                     return (
                       <Typography
                         key={suboption.title}

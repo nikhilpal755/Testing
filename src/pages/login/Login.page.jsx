@@ -24,13 +24,14 @@ const Login = () => {
 
   let from = "/redirect";
 
-  console.log(auth);
+  // console.log(auth);
 
   const onSubmit = (data) => {
     setLoading(true);
     axiosDefault
       .post("/api/login", data)
       .then((res) => {
+        console.log(res)
         if (res?.status === 200) {
           setAuth(res?.data);
           localStorage.setItem("user", JSON.stringify(res?.data));
@@ -50,6 +51,7 @@ const Login = () => {
         } else if (err.response?.status === 401) {
           setErr("Unauthorized");
         } else {
+          console.log(err);
           setErr("Login failed");
         }
       });
